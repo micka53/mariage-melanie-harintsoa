@@ -81,8 +81,8 @@
 
       <!-- Date visible — modifiez selon votre mariage -->
       <p class="countdown-date-display">
-        <span class="fr-text">Samedi 27 Juin 2026 · 10h00</span>
-        <span class="de-text">Samstag, 27. Juni 2026 · 10:00 Uhr</span>
+        <span class="fr-text">Samedi 27 Juin 2026 · 15h00</span>
+        <span class="de-text">Samstag, 27. Juni 2026 · 15:00 Uhr</span>
       </p>
 
       <div class="countdown-grid">
@@ -223,8 +223,8 @@
             <span class="de-text">Uhrzeit</span>
           </p>
           <p class="event-card-value">
-            <span class="fr-text">Cérémonie à<br/>10h00</span>
-            <span class="de-text">Zeremonie um<br/>10:00 Uhr</span>
+            <span class="fr-text">Cérémonie à<br/>15h00</span>
+            <span class="de-text">Zeremonie um<br/>15:00 Uhr</span>
           </p>
         </div>
 
@@ -235,8 +235,20 @@
             <span class="de-text">Ort</span>
           </p>
           <p class="event-card-value">
-            <span class="fr-text">À compléter<br/>par les mariés</span>
-            <span class="de-text">Von den Brautleuten<br/>einzutragen</span>
+            <span class="fr-text">150 Bd Claudel<br/>13009 Marseille</span>
+            <span class="de-text">150 Bd Claudel<br/>13009 Marseille</span>
+          </p>
+        </div>
+
+        <div class="event-card">
+          <div class="event-card-icon">🥂</div>
+          <p class="event-card-label">
+            <span class="fr-text">Cocktail</span>
+            <span class="de-text">Cocktailempfang</span>
+          </p>
+          <p class="event-card-value">
+            <span class="fr-text">À partir de<br/>18h00</span>
+            <span class="de-text">Ab<br/>18:00 Uhr</span>
           </p>
         </div>
 
@@ -298,7 +310,7 @@
 
     // ── COMPTE À REBOURS ─────────────────────────────────────────────
     // ↓ Modifiez cette date / Ändert dieses Datum
-    const WEDDING_DATE = new Date('2026-06-27T10:00:00');
+    const WEDDING_DATE = new Date('2026-06-27T15:00:00');
 
     function updateCountdown() {
       const diff = WEDDING_DATE - new Date();
