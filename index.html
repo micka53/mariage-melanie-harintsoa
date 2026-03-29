@@ -157,18 +157,15 @@
 
           <div class="carousel-item">
             <img src="photos/1.jpg" alt="Photo N" />
-            <div class="carousel-overlay"></div><span class="carousel-number">01</span>
           </div>
           <div class="carousel-item">
-            <img src="photos/2.jpg" alt="Photo N" />
-            <div class="carousel-overlay"></div><span class="carousel-number">02</span>
+            <img src="photos/2.jpg" alt="Photo N" />            
           </div>
-          <!--div class="carousel-item">
-            <img src="image/3.jpg" alt="Photo N" />
-            <div class="carousel-overlay"></div><span class="carousel-number">03</span>
-          </div-->
           <div class="carousel-item">
-            <img src="photod/4.jpg" alt="Photo N" />       
+            <img src="photos/3.jpg" alt="Photo N" />            
+          </div>
+          <div class="carousel-item">
+            <img src="photos/4.jpg" alt="Photo N" />       
           </div>
           <div class="carousel-item">
             <img src="photos/5.jpg" alt="Photo N" />      
@@ -179,18 +176,6 @@
           <div class="carousel-item">
             <img src="photos/7.jpg" alt="Photo N" />      
           </div>
-          <!--div class="carousel-item">
-           <img src="image/1.jpg" alt="Photo N" />
-            <div class="carousel-overlay"></div><span class="carousel-number">08</span>
-          </div>
-          <div class="carousel-item">
-            <img src="image/2.jpg" alt="Photo N" />
-            <div class="carousel-overlay"></div><span class="carousel-number">09</span>
-          </div>
-          <div class="carousel-item">
-            <img src="image/5.jpg" alt="Photo N" />
-            <div class="carousel-overlay"></div><span class="carousel-number">10</span>
-          </div-->
 
         </div>
       </div>
@@ -340,10 +325,42 @@
     // ── CARROUSEL INFINI ─────────────────────────────────────────────
     const track = document.getElementById('carousel-track');
     if (track) {
-      Array.from(track.children).forEach(item =>
-        track.appendChild(item.cloneNode(true))
-      );
+      const originals = Array.from(track.children);
+      const count = originals.length;
+
+      // Duplique suffisamment pour remplir n'importe quelle largeur d'écran
+      for (let i = 0; i < 5; i++) {
+        originals.forEach(item => track.appendChild(item.cloneNode(true)));
+      }
+
+      // Calcule la largeur réelle après rendu (images chargées)
+      function startCarousel() {
+        const firstItem = track.children[0];
+        const itemW = firstItem.getBoundingClientRect().width;
+        const gap = 20;
+        const scrollWidth = count * (itemW + gap);
+
+        // Supprime l'ancienne animation CSS et en injecte une précise
+        const style = document.createElement('style');
+        style.id = 'carousel-anim';
+        style.textContent = `
+          @keyframes scrollCarousel {
+            from { transform: translateX(0); }
+            to   { transform: translateX(-${scrollWidth}px); }
+          }
+          .carousel-track { animation: scrollCarousel 35s linear infinite; }
+        `;
+        // Retire l'éventuel ancien style injecté
+        const old = document.getElementById('carousel-anim');
+        if (old) old.remove();
+        document.head.appendChild(style);
+      }
+
+      // Lance après que les images soient chargées (ou au bout de 500ms max)
+      window.addEventListener('load', startCarousel);
+      setTimeout(startCarousel, 500);
     }
+
 
 
     // ── SCROLL REVEAL ────────────────────────────────────────────────

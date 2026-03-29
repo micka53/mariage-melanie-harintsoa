@@ -517,19 +517,56 @@ body.lang-de span.de-text { display: inline; }
 @keyframes fadeUp   { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
 @keyframes fadeIn   { from { opacity: 0; } to { opacity: 1; } }
 @keyframes rotateSlow { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-@keyframes scrollCarousel { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+/* scrollCarousel est généré dynamiquement par le JS selon la largeur réelle des photos */
 @keyframes pulse { 0%, 100% { opacity: 0.4; } 50% { opacity: 0.8; } }
 
 /* ===== SCROLL REVEAL ===== */
 .reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.9s ease, transform 0.9s ease; }
 .reveal.visible { opacity: 1; transform: translateY(0); }
 
-/* ===== RESPONSIVE ===== */
+/* ===== RESPONSIVE MOBILE (Android & iPhone) ===== */
 @media (max-width: 600px) {
+  /* Hero photo */
   .hero-photo, .photo-placeholder { width: 180px; height: 180px; }
-  .carousel-item { width: 165px; height: 210px; }
-  .event-card { max-width: 100%; }
-  .names-display { font-size: 1.8rem; }
-  .countdown-number { font-size: 2.2rem; }
+  .hero-photo-frame::before { inset: -10px; }
+  .hero-photo-frame::after  { inset: -18px; }
+
+  /* Noms */
+  .names-display { font-size: 1.7rem; }
+  .hero-subtitle { font-size: 1rem; }
+  .hero-intro { font-size: 1rem; }
+
+  /* Compte à rebours */
+  .countdown-number { font-size: 2rem; }
+  .countdown-item { min-width: 60px; }
+  .countdown-separator { font-size: 1.8rem; }
+  .countdown-date-display { font-size: 1rem; }
+
+  /* Carrousel */
+  .carousel-item { width: 160px; height: 200px; }
+  .carousel-track-wrapper::before,
+  .carousel-track-wrapper::after { width: 60px; }
+
+  /* Cartes événement */
+  .event-card { max-width: 100%; padding: 24px 20px; }
+  .event-cards { flex-direction: column; align-items: center; }
+
+  /* Séparateur */
+  .divider-ornament { font-size: 0.75rem; white-space: normal; text-align: center; }
+  .section-divider { max-width: 100%; }
+
+  /* Lang switcher */
   .lang-switcher { top: 12px; right: 12px; }
+  .lang-btn { padding: 5px 10px; font-size: 0.5rem; }
+
+  /* Clôture */
+  .closing-names { font-size: 1.3rem; }
+  .closing-message { font-size: 1rem; }
+}
+
+@media (max-width: 380px) {
+  .names-display { font-size: 1.4rem; }
+  .countdown-number { font-size: 1.7rem; }
+  .carousel-item { width: 140px; height: 180px; }
+  .hero-photo, .photo-placeholder { width: 160px; height: 160px; }
 }
