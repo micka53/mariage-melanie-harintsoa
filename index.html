@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Melanie & Harintsoa — Mariage / Hochzeit</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="lang-fr">
+
+  <div class="bg-decoration"></div>
+
+  <!-- ════════════════════════════
+       SÉLECTEUR DE LANGUE / SPRACHAUSWAHL
+  ════════════════════════════ -->
+  <div class="lang-switcher">
+    <button class="lang-btn active" onclick="setLang('fr')">🇫🇷 FR</button>
+    <button class="lang-btn"        onclick="setLang('de')">🇩🇪 DE</button>
+  </div>
+
+  <div class="wrapper">
+
+    <!-- ════════════════════════════
+         HERO — PHOTO & PRÉSENTATION
+    ════════════════════════════ -->
+    <section class="hero">
+
+      <p class="hero-badge">
+        <span class="fr-text">Invitation au Mariage</span>
+        <span class="de-text">Hochzeitseinladung</span>
+      </p>
+
+      <!-- Photo principale — remplacez par : <img src="votre-photo.jpg" class="hero-photo" alt="Melanie & Harintsoa" /> -->
+      <div class="hero-photo-frame">
+        <img src="couple.jpg" class="hero-photo" alt="Melanie & Harintsoa" />
+      </div>
+
+      <div class="hero-names">
+
+        <h1 class="names-display">
+          Melanie <span class="ampersand">&amp;</span> Harintsoa
+        </h1>
+
+        <div class="ornament-line"><span>✦</span></div>
+
+        <!-- Sous-titre bilingue toujours visible -->
+        <p class="hero-subtitle">Nous nous marions !</p>
+        <p class="hero-subtitle-alt">Wir heiraten!</p>
+
+        <!-- Texte de présentation FR -->
+        <p class="hero-intro fr-text">
+          C'est avec une joie immense et le cœur rempli d'amour que nous vous
+          convions à partager ce jour si précieux — celui où nos deux vies
+          ne feront plus qu'une, pour toujours.
+        </p>
+
+        <!-- Texte de présentation DE -->
+        <p class="hero-intro de-text">
+          Mit großer Freude und einem Herzen voller Liebe laden wir euch ein,
+          diesen besonderen Tag mit uns zu teilen — den Tag, an dem unsere
+          zwei Leben für immer zu einem werden.
+        </p>
+
+        <div class="ornament">✦ &nbsp; ✦ &nbsp; ✦</div>
+      </div>
+
+    </section>
+
+
+    <!-- ════════════════════════════
+         COMPTE À REBOURS / COUNTDOWN
+    ════════════════════════════ -->
+    <section class="countdown-section reveal">
+
+      <p class="section-title">
+        <span class="fr-text">Notre grand jour arrive dans</span>
+        <span class="de-text">Unser großer Tag beginnt in</span>
+      </p>
+
+      <div class="ornament-line"><span>◆</span></div>
+
+      <!-- Date visible — modifiez selon votre mariage -->
+      <p class="countdown-date-display">
+        <span class="fr-text">Samedi 27 Juin 2026 · 10h00</span>
+        <span class="de-text">Samstag, 27. Juni 2026 · 10:00 Uhr</span>
+      </p>
+
+      <div class="countdown-grid">
+
+        <div class="countdown-item">
+          <span class="countdown-number" id="cd-days">--</span>
+          <span class="countdown-label">
+            <span class="fr-text">Jours</span>
+            <span class="de-text">Tage</span>
+          </span>
+        </div>
+
+        <span class="countdown-separator">:</span>
+
+        <div class="countdown-item">
+          <span class="countdown-number" id="cd-hours">--</span>
+          <span class="countdown-label">
+            <span class="fr-text">Heures</span>
+            <span class="de-text">Stunden</span>
+          </span>
+        </div>
+
+        <span class="countdown-separator">:</span>
+
+        <div class="countdown-item">
+          <span class="countdown-number" id="cd-minutes">--</span>
+          <span class="countdown-label">
+            <span class="fr-text">Minutes</span>
+            <span class="de-text">Minuten</span>
+          </span>
+        </div>
+
+        <span class="countdown-separator">:</span>
+
+        <div class="countdown-item">
+          <span class="countdown-number" id="cd-seconds">--</span>
+          <span class="countdown-label">
+            <span class="fr-text">Secondes</span>
+            <span class="de-text">Sekunden</span>
+          </span>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- Séparateur -->
+    <div class="section-divider reveal">
+      <span class="divider-ornament">
+        <span class="fr-text">— ✦ Nos Souvenirs · Unsere Erinnerungen ✦ —</span>
+        <span class="de-text">— ✦ Unsere Erinnerungen · Nos Souvenirs ✦ —</span>
+      </span>
+    </div>
+
+
+    <!-- ════════════════════════════
+         GALERIE / BILDERGALERIE
+    ════════════════════════════ -->
+    <section class="gallery-section">
+
+      <div class="gallery-title-block reveal">
+        <p class="section-title">
+          <span class="fr-text">Notre histoire en images</span>
+          <span class="de-text">Unsere Geschichte in Bildern</span>
+        </p>
+        <p class="gallery-subtitle fr-text">Des instants qui ont forgé notre amour</p>
+        <p class="gallery-subtitle de-text">Momente, die unsere Liebe geprägt haben</p>
+      </div>
+
+      <div class="carousel-track-wrapper">
+        <div class="carousel-track" id="carousel-track">
+
+          <div class="carousel-item">
+            <img src="photos/1.jpg" alt="Photo N" />
+            <div class="carousel-overlay"></div><span class="carousel-number">01</span>
+          </div>
+          <div class="carousel-item">
+            <img src="photos/2.jpg" alt="Photo N" />
+            <div class="carousel-overlay"></div><span class="carousel-number">02</span>
+          </div>
+          <!--div class="carousel-item">
+            <img src="image/3.jpg" alt="Photo N" />
+            <div class="carousel-overlay"></div><span class="carousel-number">03</span>
+          </div-->
+          <div class="carousel-item">
+            <img src="photod/4.jpg" alt="Photo N" />       
+          </div>
+          <div class="carousel-item">
+            <img src="photos/5.jpg" alt="Photo N" />      
+          </div>
+          <div class="carousel-item">
+            <img src="photos/6.jpg" alt="Photo N" />       
+          </div>
+          <div class="carousel-item">
+            <img src="photos/7.jpg" alt="Photo N" />      
+          </div>
+          <!--div class="carousel-item">
+           <img src="image/1.jpg" alt="Photo N" />
+            <div class="carousel-overlay"></div><span class="carousel-number">08</span>
+          </div>
+          <div class="carousel-item">
+            <img src="image/2.jpg" alt="Photo N" />
+            <div class="carousel-overlay"></div><span class="carousel-number">09</span>
+          </div>
+          <div class="carousel-item">
+            <img src="image/5.jpg" alt="Photo N" />
+            <div class="carousel-overlay"></div><span class="carousel-number">10</span>
+          </div-->
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Séparateur -->
+    <div class="section-divider reveal">
+      <span class="divider-ornament">
+        <span class="fr-text">— ◆ Informations pratiques ◆ —</span>
+        <span class="de-text">— ◆ Praktische Informationen ◆ —</span>
+      </span>
+    </div>
+
+
+    <!-- ════════════════════════════
+         INFOS ÉVÉNEMENT / VERANSTALTUNGSINFOS
+    ════════════════════════════ -->
+    <section class="event-section reveal">
+
+      <p class="section-title">
+        <span class="fr-text">Le Jour J</span>
+        <span class="de-text">Der große Tag</span>
+      </p>
+      <div class="ornament-line"><span>✦</span></div>
+
+      <div class="event-cards">
+
+        <div class="event-card">
+          <div class="event-card-icon">📅</div>
+          <p class="event-card-label">
+            <span class="fr-text">Date</span>
+            <span class="de-text">Datum</span>
+          </p>
+          <p class="event-card-value">
+            <span class="fr-text">Samedi<br/>27 Juin 2026</span>
+            <span class="de-text">Samstag<br/>27. Juni 2026</span>
+          </p>
+        </div>
+
+        <div class="event-card">
+          <div class="event-card-icon">🕙</div>
+          <p class="event-card-label">
+            <span class="fr-text">Heure</span>
+            <span class="de-text">Uhrzeit</span>
+          </p>
+          <p class="event-card-value">
+            <span class="fr-text">Cérémonie à<br/>10h00</span>
+            <span class="de-text">Zeremonie um<br/>10:00 Uhr</span>
+          </p>
+        </div>
+
+        <div class="event-card">
+          <div class="event-card-icon">📍</div>
+          <p class="event-card-label">
+            <span class="fr-text">Lieu</span>
+            <span class="de-text">Ort</span>
+          </p>
+          <p class="event-card-value">
+            <span class="fr-text">À compléter<br/>par les mariés</span>
+            <span class="de-text">Von den Brautleuten<br/>einzutragen</span>
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ════════════════════════════
+         CLÔTURE / ABSCHLUSS
+    ════════════════════════════ -->
+    <section class="closing-section reveal">
+
+      <div class="ornament-line"><span>✦</span></div>
+
+      <p class="closing-message fr-text">
+        Votre présence à nos côtés sera le plus beau des cadeaux.<br />
+        Nous avons hâte de partager ce moment magique avec vous,
+        ceux que nous aimons.
+      </p>
+
+      <p class="closing-message de-text">
+        Eure Anwesenheit an unserer Seite ist das schönste Geschenk.<br />
+        Wir freuen uns darauf, diesen magischen Moment mit euch,
+        unseren Liebsten, zu teilen.
+      </p>
+
+      <p class="closing-names">Melanie &amp; Harintsoa</p>
+
+      <p class="closing-tagline">
+        <span class="fr-text">Pour la vie · Amour &amp; Bonheur</span>
+        <span class="de-text">Für immer · Liebe &amp; Glück</span>
+      </p>
+
+      <div class="ornament">✦ &nbsp; ✦ &nbsp; ✦</div>
+
+    </section>
+
+  </div><!-- /wrapper -->
+
+
+  <!-- ════════════════════════════
+       JAVASCRIPT
+  ════════════════════════════ -->
+  <script>
+    // ── LANGUE ──────────────────────────────────────────────────────
+    function setLang(lang) {
+      document.body.className = 'lang-' + lang;
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.textContent.toLowerCase().includes(lang));
+      });
+      document.documentElement.lang = lang;
+      localStorage.setItem('wedding-lang', lang);
+    }
+
+    // Restaurer la langue choisie
+    const savedLang = localStorage.getItem('wedding-lang');
+    if (savedLang) setLang(savedLang);
+
+
+    // ── COMPTE À REBOURS ─────────────────────────────────────────────
+    // ↓ Modifiez cette date / Ändert dieses Datum
+    const WEDDING_DATE = new Date('2026-06-27T10:00:00');
+
+    function updateCountdown() {
+      const diff = WEDDING_DATE - new Date();
+      if (diff <= 0) {
+        ['days','hours','minutes','seconds'].forEach(id =>
+          document.getElementById('cd-' + id).textContent = '00'
+        );
+        return;
+      }
+      const d = Math.floor(diff / 86400000);
+      const h = Math.floor((diff % 86400000) / 3600000);
+      const m = Math.floor((diff % 3600000)  / 60000);
+      const s = Math.floor((diff % 60000)    / 1000);
+      document.getElementById('cd-days').textContent    = String(d).padStart(2,'0');
+      document.getElementById('cd-hours').textContent   = String(h).padStart(2,'0');
+      document.getElementById('cd-minutes').textContent = String(m).padStart(2,'0');
+      document.getElementById('cd-seconds').textContent = String(s).padStart(2,'0');
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
+
+    // ── CARROUSEL INFINI ─────────────────────────────────────────────
+    const track = document.getElementById('carousel-track');
+    if (track) {
+      Array.from(track.children).forEach(item =>
+        track.appendChild(item.cloneNode(true))
+      );
+    }
+
+
+    // ── SCROLL REVEAL ────────────────────────────────────────────────
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
