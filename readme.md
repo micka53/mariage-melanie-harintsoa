@@ -3,7 +3,7 @@
 Site web d'invitation de mariage bilingue (Français / Deutsch).
 
 ## 🌐 Voir le site en ligne
-👉 [Cliquez ici](https://micka53.github.io/nom-du-repo)
+👉 [Cliquez ici](https://micka53.github.io/mariage-melanie-harintsoa)
 
 ## 📁 Structure du projet
 ```
