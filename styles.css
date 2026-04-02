@@ -370,6 +370,7 @@ body.lang-de span.de-text { display: inline; }
   background: linear-gradient(to right, transparent, var(--border), transparent);
   transform: translateY(-50%);
 }
+
 .divider-ornament {
   position: relative;
   background: var(--bg);
@@ -383,7 +384,7 @@ body.lang-de span.de-text { display: inline; }
 }
 
 /* ===== GALLERY ===== */
-.gallery-section { padding: 60px 0; }
+/*.gallery-section { padding: 60px 0; }
 .gallery-title-block { padding: 0 20px; text-align: center; margin-bottom: 40px; }
 .gallery-subtitle {
   font-family: 'Cormorant Garamond', serif;
@@ -395,7 +396,7 @@ body.lang-de span.de-text { display: inline; }
 }
 
 /* ===== CARROUSEL ===== */
-.carousel-track-wrapper {
+/*.carousel-track-wrapper {
   position: relative;
   width: 100%;
   overflow: hidden;
@@ -449,7 +450,7 @@ body.lang-de span.de-text { display: inline; }
 }
 .carousel-placeholder .ci { font-size: 1.8rem; opacity: 0.4; }
 .carousel-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(192,106,26,0.18) 0%, transparent 60%); }
-.carousel-number { position: absolute; bottom: 12px; right: 12px; font-family: 'Cinzel Decorative', cursive; font-size: 0.55rem; letter-spacing: 0.2em; color: #fff; opacity: 0.8; }
+.carousel-number { position: absolute; bottom: 12px; right: 12px; font-family: 'Cinzel Decorative', cursive; font-size: 0.55rem; letter-spacing: 0.2em; color: #fff; opacity: 0.8; }*/
 
 /* ===== INFOS ÉVÉNEMENT ===== */
 .event-section { padding: 70px 20px; text-align: center; }
