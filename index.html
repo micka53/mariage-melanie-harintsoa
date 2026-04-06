@@ -11,6 +11,16 @@
   <div class="bg-decoration"></div>
 
   <!-- ════════════════════════════
+       BANDEAU INVITÉ / GÄSTEBANNER
+  ════════════════════════════ -->
+  <div id="guest-banner" style="display:none;position:fixed;top:0;left:0;right:0;z-index:2000;
+    background:linear-gradient(90deg,#b85c65,#c9928a);color:white;text-align:center;
+    padding:11px 20px;font-family:'Cinzel Decorative',cursive;font-size:0.55rem;
+    letter-spacing:0.22em;text-transform:uppercase;
+    box-shadow:0 2px 16px rgba(140,50,60,0.22);">
+  </div>
+
+  <!-- ════════════════════════════
        SÉLECTEUR DE LANGUE / SPRACHAUSWAHL
   ════════════════════════════ -->
   <div class="lang-switcher">
@@ -38,7 +48,7 @@
       <div class="hero-names">
 
         <h1 class="names-display">
-          Melanie <span class="ampersand">&amp;</span> Harintsoa
+          Harintsoa <span class="ampersand">&amp;</span> Melanie
         </h1>
 
         <div class="ornament-line"><span>✦</span></div>
@@ -366,7 +376,7 @@
         unseren Liebsten, zu teilen.
       </p>
 
-      <p class="closing-names">Melanie &amp; Harintsoa</p>
+      <p class="closing-names">Harintsoa &amp; Melanie</p>
 
       <p class="closing-tagline">
         <span class="fr-text">Pour la vie · Amour &amp; Bonheur</span>
@@ -477,6 +487,47 @@
     }, { threshold: 0.12 });
 
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+
+    // ── GESTION INVITÉS — PLACES RÉSERVÉES ──────────────────────────
+    // Liste des invités : { id, name, places }
+    // → Ta sœur ajoute ici, puis git push
+    const GUESTS = [
+      // Exemples — remplacer par les vrais invités :
+       //{ id: 'rakoto01', name: 'Famille Rakoto',  places: 4 },
+      // { id: 'dupont02', name: 'Jean & Marie',    places: 2 },
+      // { id: 'schmidt3', name: 'Familie Schmidt', places: 3 },
+    ];
+
+    // Détection du paramètre ?g= dans l'URL
+    (function() {
+      const params  = new URLSearchParams(window.location.search);
+      const guestId = params.get('g');
+      if (!guestId) return;
+
+      const guest = GUESTS.find(g => g.id === guestId);
+      if (!guest) return;
+
+      // Affiche le bandeau
+      const banner = document.getElementById('guest-banner');
+      const n      = guest.places;
+      const plFR   = n > 1 ? n + ' places réservées pour vous 🎊' : '1 place réservée pour vous 🎊';
+      const plDE   = n > 1 ? n + ' Plätze für Sie reserviert 🎊'  : '1 Platz für Sie reserviert 🎊';
+      const lang   = localStorage.getItem('wedding-lang') || 'fr';
+      banner.textContent = lang === 'de' ? plDE : plFR;
+      banner.style.display = 'block';
+
+      // Décale la page pour ne pas masquer le contenu sous le bandeau
+      document.body.style.paddingTop = '44px';
+
+      // Met à jour si on change de langue
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const l = btn.textContent.toLowerCase().includes('fr') ? 'fr' : 'de';
+          banner.textContent = l === 'de' ? plDE : plFR;
+        });
+      });
+    })();
   </script>
 
 </body>
