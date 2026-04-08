@@ -754,6 +754,40 @@ body.lang-de span.de-text { display: inline; }
   font-size: 1.2rem;
 }
 
+/* Instagram */
+.instagram-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 50px;
+}
+.insta-link{
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 28px;
+  background: rgba(232, 76, 9, 0.1);
+  border: 1px solid rgba(234, 98, 13, 0.3);
+  border-radius: 50px;
+  text-decoration: none;
+  color: #f24e18;
+  font-family: 'Cinzel Decorative', cursive;
+  font-size: 0.52rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  transition: background 0.25s, transform 0.2s, box-shadow 0.25s;
+  backdrop-filter: blur(8px);
+}
+.insta-link:hover{
+  background: rgba(214, 18, 15, 0.18);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(208, 31, 31, 0.2);
+}
+.insta-icon{
+  font-size: 1.2rem;
+}
+
 /* Carte absence */
 .absence-card {
   max-width: 520px;
@@ -809,6 +843,8 @@ body.lang-de span.de-text { display: inline; }
 
 @media (max-width: 600px) {
   .facebook-links { flex-direction: column; align-items: center; }
+  .instagram-links{ flex-direction: column; align-items: center; }
   .absence-card { padding: 24px 20px; }
   .fb-link { font-size: 0.48rem; padding: 12px 20px; }
+  .insta-link { font-size: 0.48rem; padding: 12px 20px;}
 }
